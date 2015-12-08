@@ -1,0 +1,9 @@
+[submodule "dsc"]
+	path = dsc
+	url = https://github.com/MSFTOSSMgmt/dsc.git
+[submodule "omi"]
+	path = omi
+	url = https://github.com/MSFTOSSMgmt/omi.git
+[submodule "pal"]
+	path = pal
+	url = https://github.com/MSFTOSSMgmt/pal.git
