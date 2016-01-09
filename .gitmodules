@@ -8,5 +8,5 @@
         branch = develop
 [submodule "dsc"]
         path = dsc
-        url = git@github.com:MSFTOSSMgmt/dsc.git
+        url = git@github.com:Microsoft/PowerShell-DSC-for-Linux.git
         branch = develop
