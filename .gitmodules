@@ -1,12 +1,12 @@
 [submodule "pal"]
         path = pal
-        url = git@github.com:MSFTOSSMgmt/pal.git
-        branch = develop
+        url = git@github.com:Microsoft/pal.git
+        branch = master
 [submodule "omi"]
         path = omi
-        url = git@github.com:MSFTOSSMgmt/omi.git
-        branch = develop
+        url = git@github.com:Microsoft/omi.git
+        branch = master
 [submodule "dsc"]
         path = dsc
         url = git@github.com:Microsoft/PowerShell-DSC-for-Linux.git
-        branch = develop
+        branch = master
