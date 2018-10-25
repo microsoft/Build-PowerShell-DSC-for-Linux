@@ -60,12 +60,12 @@ if [ -z "$VERSION_FILE" ]; then
     exit 1
 fi
 
-if [ ! -f $VERSION_FILE ]; then
+if [ ! -f "$VERSION_FILE" ]; then
     echo "Can't find file $VERSION_FILE" 1>& 2
     exit 1
 fi
 
-if [ ! -w $VERSION_FILE ]; then
+if [ ! -w "$VERSION_FILE" ]; then
     echo "File $VERSION_FILE is not writeable" 1>& 2
     exit 1
 fi
@@ -75,14 +75,14 @@ fi
 
 # Increment build number
 if [ $P_INCREMENT -ne 0 ]; then
-    VERSION_OLD=`grep '^[A-Z]*_BUILDVERSION_BUILDNR' $VERSION_FILE | cut -d= -f2`
-    DATE_OLD=`grep '^[A-Z]*_BUILDVERSION_DATE' $VERSION_FILE | cut -d= -f2`
+    VERSION_OLD=$(grep '^[A-Z]*_BUILDVERSION_BUILDNR' "$VERSION_FILE" | cut -d= -f2)
+    DATE_OLD=$(grep '^[A-Z]*_BUILDVERSION_DATE' "$VERSION_FILE" | cut -d= -f2)
 
     VERSION_NEW=$(( $VERSION_OLD + 1 ))
-    DATE_NEW=`date +%Y%m%d`
+    DATE_NEW=$(date +%Y%m%d)
 
-    perl -i -pe "s/(^[A-Z]*_BUILDVERSION_BUILDNR)=.*/\1=$VERSION_NEW/" $VERSION_FILE
-    perl -i -pe "s/(^[A-Z]*_BUILDVERSION_DATE)=.*/\1=$DATE_NEW/" $VERSION_FILE
+    perl -i -pe "s/(^[A-Z]*_BUILDVERSION_BUILDNR)=.*/\1=$VERSION_NEW/" "$VERSION_FILE"
+    perl -i -pe "s/(^[A-Z]*_BUILDVERSION_DATE)=.*/\1=$DATE_NEW/" "$VERSION_FILE"
 
     if [ $VERBOSE -ne 0 ]; then
         echo "Updated version number, Was: $VERSION_OLD, Now $VERSION_NEW"
@@ -92,7 +92,7 @@ fi
 
 # Set release build
 if [ $P_RELEASE -ne 0 ]; then
-    perl -i -pe "s/^([A-Z]*_BUILDVERSION_STATUS)=.*/\1=Release_Build/" $VERSION_FILE
+    perl -i -pe "s/^([A-Z]*_BUILDVERSION_STATUS)=.*/\1=Release_Build/" "$VERSION_FILE"
     [ $VERBOSE -ne 0 ] && echo "Set BUILDVERSION_STATUS to \"Release_Build\""
     echo "WARNING: Never commit $VERSION_FILE with release build set!" 1>& 2
 fi
