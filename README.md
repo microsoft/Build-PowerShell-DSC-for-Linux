@@ -23,7 +23,7 @@ sudo yum install curl libcurl-devel
 sudo zypper install curl libcurl-devel
 ```
 - Debian/Ubuntu: 
- There are several back-ends for libcurl-dev.  The 'apt-get' will list the candidates.  Pick the appropriate one to install.
+ There are several back-ends for libcurl-dev.  The `apt-get` will list the candidates.  Pick the appropriate one to install.
 ```
 sudo apt-get install curl libcurl-dev 
 ```
@@ -62,7 +62,7 @@ cd dsc/build
 ./configure --enable-ulinux
 make
 ```
-- Packages are placed into bld-dsc/dsc/release.
+- Packages are placed into `bld-dsc/dsc/release`.
 
 
 
@@ -70,9 +70,7 @@ make
 
 ### Code of Conduct
 
-This project has adopted the [Microsoft Open Source Code of Conduct]
-(https://opensource.microsoft.com/codeofconduct/).  For more
-information see the [Code of Conduct FAQ]
-(https://opensource.microsoft.com/codeofconduct/faq/) or contact
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  For more
+information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact
 [opencode@microsoft.com](mailto:opencode@microsoft.com) with any
 additional questions or comments.
